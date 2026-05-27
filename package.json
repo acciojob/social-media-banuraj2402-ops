@@ -52,3 +52,4 @@
     "xml-js": "^1.6.11"
   }
 }
+npm install react-router-dom@5.3.3 @reduxjs/toolkit react-redux
