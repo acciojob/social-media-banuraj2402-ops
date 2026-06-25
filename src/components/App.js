@@ -45,7 +45,7 @@ function Home({ posts, setPosts }) {
   };
 
   return (
-    <div>
+    <div className="App">
       <h1>GenZ</h1>
 
       <Link to="/">Posts</Link>{" "}
@@ -54,14 +54,14 @@ function Home({ posts, setPosts }) {
 
       <br />
       <br />
-
+      <form>
       <input
         id="postTitle"
         placeholder="Post Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-
+      </form>
       <br />
       <br />
 
@@ -89,7 +89,11 @@ function Home({ posts, setPosts }) {
       <br />
       <br />
 
-      <button onClick={addPost}>Add Post</button>
+      <form>
+        <button type="button" onClick={addPost}>
+           Add Post
+      </button>
+      </form>
 
       <hr />
 
@@ -123,7 +127,7 @@ function Home({ posts, setPosts }) {
             <br />
 
             <Link to={`/posts/${post.id}`}>
-              <button className="button">Edit Post</button>
+              <button className="button">View Post</button>
             </Link>
           </div>
         ))}
@@ -248,10 +252,11 @@ function SinglePostPage({ posts, setPosts }) {
       <br />
       <br />
 
-      <input
-        id="postTitle"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+      <form>
+        <input
+          id="postTitle"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
       />
 
       <br />
@@ -264,11 +269,14 @@ function SinglePostPage({ posts, setPosts }) {
       />
 
       <br />
+      
+      
       <br />
 
-      <button onClick={savePost}>
-        Save Post
+     <button type="button" onClick={savePost}>
+         Save Post
       </button>
+    </form>
     </div>
   );
 }
