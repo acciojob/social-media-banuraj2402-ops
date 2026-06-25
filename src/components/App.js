@@ -7,15 +7,12 @@ import {
   useParams,
   useHistory
 } from "react-router-dom";
-
 function Home({ posts, setPosts }) {
   const [title, setTitle] = React.useState("");
   const [author, setAuthor] = React.useState("");
   const [content, setContent] = React.useState("");
-
   const addPost = () => {
     if (!title || !author || !content) return;
-
     const newPost = {
       id: Date.now(),
       title,
@@ -23,14 +20,11 @@ function Home({ posts, setPosts }) {
       content,
       reactions: [0, 0, 0, 0, 0]
     };
-
     setPosts([newPost, ...posts]);
-
     setTitle("");
     setAuthor("");
     setContent("");
   };
-
   const addReaction = (postId, index) => {
     setPosts(
       posts.map((post) => {
@@ -43,28 +37,22 @@ function Home({ posts, setPosts }) {
       })
     );
   };
-
   return (
     <div className="App">
       <h1>GenZ</h1>
-
       <Link to="/">Posts</Link>{" "}
       <Link to="/users">Users</Link>{" "}
       <Link to="/notifications">Notifications</Link>
-
       <br />
       <br />
-      <form>
       <input
         id="postTitle"
         placeholder="Post Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      </form>
       <br />
       <br />
-
       <select
         id="postAuthor"
         value={author}
@@ -75,25 +63,20 @@ function Home({ posts, setPosts }) {
         <option value="Sarah">Sarah</option>
         <option value="Banu">Banu</option>
       </select>
-
       <br />
       <br />
-
       <textarea
         id="postContent"
         placeholder="Post Content"
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
-
       <br />
       <br />
-
-      <form>
         <button type="button" onClick={addPost}>
            Add Post
       </button>
-      </form>
+      
 
       <hr />
 
@@ -126,9 +109,9 @@ function Home({ posts, setPosts }) {
             <br />
             <br />
 
-            <Link to={`/posts/${post.id}`}>
-              <button className="button">View Post</button>
-            </Link>
+          <Link className="button" to={`/posts/${post.id}`}>
+            View Post
+          </Link>
           </div>
         ))}
       </div>
