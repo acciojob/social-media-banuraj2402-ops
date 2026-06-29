@@ -7,10 +7,12 @@ import {
   useParams,
   useHistory
 } from "react-router-dom";
+
 function Home({ posts, setPosts }) {
   const [title, setTitle] = React.useState("");
   const [author, setAuthor] = React.useState("");
   const [content, setContent] = React.useState("");
+
   const addPost = () => {
     if (!title || !author || !content) return;
     const newPost = {
@@ -25,6 +27,7 @@ function Home({ posts, setPosts }) {
     setAuthor("");
     setContent("");
   };
+
   const addReaction = (postId, index) => {
     setPosts(
       posts.map((post) => {
@@ -37,6 +40,7 @@ function Home({ posts, setPosts }) {
       })
     );
   };
+
   return (
     <div className="App">
       <h1>GenZ</h1>
@@ -79,63 +83,61 @@ function Home({ posts, setPosts }) {
         </button>
       </form>
 
-    <hr />
+      <hr />
 
-    <div className="posts-list">
-      {posts.map((post) => (
-        <div className="post" key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.content}</p>
+      <div className="posts-list">
+        {posts.map((post) => (
+          <div className="post" key={post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
 
-          <div></div>
+            <div></div>
 
-          <div>
-            <button onClick={() => addReaction(post.id, 0)}>
-              👍 {post.reactions[0]}
-            </button>
+            <div>
+              <button onClick={() => addReaction(post.id, 0)}>
+                👍 {post.reactions[0]}
+              </button>
 
-            <button onClick={() => addReaction(post.id, 1)}>
-              ❤️ {post.reactions[1]}
-            </button>
+              <button onClick={() => addReaction(post.id, 1)}>
+                ❤️ {post.reactions[1]}
+              </button>
 
-            <button onClick={() => addReaction(post.id, 2)}>
-              🎉 {post.reactions[2]}
-            </button>
+              <button onClick={() => addReaction(post.id, 2)}>
+                🎉 {post.reactions[2]}
+              </button>
 
-            <button onClick={() => addReaction(post.id, 3)}>
-              🚀 {post.reactions[3]}
-            </button>
+              <button onClick={() => addReaction(post.id, 3)}>
+                🚀 {post.reactions[3]}
+              </button>
 
-            <button onClick={() => addReaction(post.id, 4)}>
-              👀 {post.reactions[4]}
-            </button>
+              <button onClick={() => addReaction(post.id, 4)}>
+                👀 {post.reactions[4]}
+              </button>
+            </div>
+
+            <Link className="button" to={`/posts/${post.id}`}>
+              View Post
+            </Link>
           </div>
-
-          <Link className="button" to={`/posts/${post.id}`}>
-            View Post
-          </Link>
-         </div>
-       ))}
+        ))}
+      </div>
     </div>
-  </div>
- );
+  );
 }
 
 function Users({ posts }) {
   return (
     <div>
       <h1>Users</h1>
-      
-      {/* Wrap navigation in ul/li */}
-      <ul>
-        <li><Link to="/">Posts</Link></li>
-        <li><Link to="/users">Users</Link></li>
-        <li><Link to="/notifications">Notifications</Link></li>
-      </ul>
+
+      <Link to="/">Posts</Link>{" "}
+      <Link to="/users">Users</Link>{" "}
+      <Link to="/notifications">Notifications</Link>
 
       <br />
       <br />
 
+      {/* Intha list mattum thaan exact-ah 3 items count pannanum */}
       <ul>
         <li>
           <Link to="/users/1">John</Link>
@@ -150,6 +152,7 @@ function Users({ posts }) {
     </div>
   );
 }
+
 function UserPosts({ posts }) {
   const { userId } = useParams();
 
@@ -257,11 +260,10 @@ function SinglePostPage({ posts, setPosts }) {
       <br />
       <br />
 
-      
-        <input
-          id="postTitle"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+      <input
+        id="postTitle"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
       />
 
       <br />
@@ -274,14 +276,11 @@ function SinglePostPage({ posts, setPosts }) {
       />
 
       <br />
-      
-      
       <br />
 
-     <button type="button" onClick={savePost}>
+      <button type="button" onClick={savePost}>
          Save Post
       </button>
-
     </div>
   );
 }
@@ -296,11 +295,11 @@ function App() {
       reactions: [0, 0, 0, 0, 0]
     },
     {
-    id: 2,
-    title: "Second Post",
-    author: "Sarah",
-    content: "Second Content",
-    reactions: [0,0,0,0,0]
+      id: 2,
+      title: "Second Post",
+      author: "Sarah",
+      content: "Second Content",
+      reactions: [0, 0, 0, 0, 0]
     }
   ]);
 
