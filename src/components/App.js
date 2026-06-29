@@ -42,8 +42,7 @@ function Home({ posts, setPosts }) {
       <h1>GenZ</h1>
       <Link to="/">Posts</Link>{" "}
       <Link to="/users">Users</Link>{" "}
-      <Link to="/notifications">Notifications</Link>{" "}
-      <Link to="/">Home</Link>
+      <Link to="/notifications">Notifications</Link>
       <br />
       <br />
       <input
@@ -111,8 +110,8 @@ function Home({ posts, setPosts }) {
             <br />
             <br />
 
-          <Link to={`/posts/${post.id}`}>
-            <button className="button">View Post</button>
+          <Link className="button" to={`/posts/${post.id}`}>
+           View Post
           </Link>
           </div>
         ))}
@@ -125,6 +124,12 @@ function Users({ posts }) {
   return (
     <div>
       <h1>Users</h1>
+      <Link to="/">Posts</Link>{" "}
+      <Link to="/users">Users</Link>{" "}
+      <Link to="/notifications">Notifications</Link>
+
+      <br />
+      <br />
 
       <ul>
         <li>
@@ -165,6 +170,12 @@ function UserPosts({ posts }) {
   return (
     <div>
       <h1>{userName}'s Posts</h1>
+      <Link to="/">Posts</Link>{" "}
+      <Link to="/users">Users</Link>{" "}
+      <Link to="/notifications">Notifications</Link>
+
+      <br />
+      <br />
 
       {userPosts.map((post) => (
         <div className="post" key={post.id}>
@@ -182,7 +193,12 @@ function Notifications() {
   return (
     <div>
       <h1>Notifications</h1>
+      <Link to="/">Posts</Link>{" "}
+      <Link to="/users">Users</Link>{" "}
+      <Link to="/notifications">Notifications</Link>
 
+      <br />
+      <br />
       <button
         className="button"
         onClick={() =>
@@ -231,8 +247,14 @@ function SinglePostPage({ posts, setPosts }) {
   return (
     <div className="post">
       <h2>Single Post</h2>
+      <Link to="/">Posts</Link>{" "}
+      <Link to="/users">Users</Link>{" "}
+      <Link to="/notifications">Notifications</Link>
 
-      <button className="button">Edit Post</button>
+      <br />
+      <br />
+
+      <button className="button">Edit</button>
 
       <br />
       <br />
