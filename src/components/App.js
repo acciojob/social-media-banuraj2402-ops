@@ -89,7 +89,7 @@ function Home({ posts, setPosts }) {
 
           <div></div>
 
-           <div>
+          <div>
             <button onClick={() => addReaction(post.id, 0)}>
               👍 {post.reactions[0]}
             </button>
@@ -109,7 +109,7 @@ function Home({ posts, setPosts }) {
             <button onClick={() => addReaction(post.id, 4)}>
               👀 {post.reactions[4]}
             </button>
-            </div>
+          </div>
 
           <Link className="button" to={`/posts/${post.id}`}>
             View Post
@@ -119,6 +119,38 @@ function Home({ posts, setPosts }) {
     </div>
   </div>
  );
+}
+function Users({ posts }) {
+  return (
+    <div>
+      <h1>Users</h1>
+
+      <Link to="/">Posts</Link>{" "}
+      <Link to="/users">Users</Link>{" "}
+      <Link to="/notifications">Notifications</Link>
+
+      <br />
+      <br />
+
+      <ul>
+        <li>
+          <Link to="/users/1">John</Link>
+        </li>
+        <li>
+          <Link to="/users/2">Sarah</Link>
+        </li>
+        <li>
+          <Link to="/users/3">Banu</Link>
+        </li>
+      </ul>
+
+      {posts.length > 0 && (
+        <div className="post">
+          <h3>{posts[0].title}</h3>
+        </div>
+      )}
+    </div>
+  );
 }
 function UserPosts({ posts }) {
   const { userId } = useParams();
@@ -222,7 +254,7 @@ function SinglePostPage({ posts, setPosts }) {
       <br />
       <br />
 
-      <button className="button">Edit</button>
+      <button className="button">Edit Post</button>
 
       <br />
       <br />
