@@ -42,7 +42,7 @@ function Home({ posts, setPosts }) {
       <h1>GenZ</h1>
       <Link to="/">Posts</Link>{" "}
       <Link to="/users">Users</Link>{" "}
-      <Link to="/notifications">Notifications</Link>
+      <Link to="/notifications">Notifications</Link>{" "}
       <Link to="/">Home</Link>
       <br />
       <br />
