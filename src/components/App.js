@@ -43,6 +43,7 @@ function Home({ posts, setPosts }) {
       <Link to="/">Posts</Link>{" "}
       <Link to="/users">Users</Link>{" "}
       <Link to="/notifications">Notifications</Link>
+      <Link to="/">Home</Link>
       <br />
       <br />
       <input
@@ -73,10 +74,11 @@ function Home({ posts, setPosts }) {
       />
       <br />
       <br />
+      <form>
         <button type="button" onClick={addPost}>
            Add Post
-      </button>
-      
+        </button>
+      </form>
 
       <hr />
 
@@ -272,6 +274,13 @@ function App() {
       author: "John",
       content: "Hello World",
       reactions: [0, 0, 0, 0, 0]
+    }
+    {
+    id: 2,
+    title: "Second Post",
+    author: "Sarah",
+    content: "Second Content",
+    reactions: [0,0,0,0,0]
     }
   ]);
 
