@@ -274,7 +274,7 @@ function App() {
       author: "John",
       content: "Hello World",
       reactions: [0, 0, 0, 0, 0]
-    }
+    },
     {
     id: 2,
     title: "Second Post",
