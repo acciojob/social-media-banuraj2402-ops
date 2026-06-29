@@ -86,7 +86,7 @@ function Home({ posts, setPosts }) {
           <div className="post" key={post.id}>
             <h3>{post.title}</h3>
             <p>{post.content}</p>
-
+          <div>
             <button onClick={() => addReaction(post.id, 0)}>
               👍 {post.reactions[0]}
             </button>
@@ -106,9 +106,7 @@ function Home({ posts, setPosts }) {
             <button onClick={() => addReaction(post.id, 4)}>
               👀 {post.reactions[4]}
             </button>
-
-            <br />
-            <br />
+          </div>
 
           <Link className="button" to={`/posts/${post.id}`}>
            View Post
