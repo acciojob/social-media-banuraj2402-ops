@@ -81,42 +81,45 @@ function Home({ posts, setPosts }) {
 
     <hr />
 
-<div className="posts-list">
-  {posts.map((post) => (
-    <div className="post" key={post.id}>
-      <h3>{post.title}</h3>
-      <p>{post.content}</p>
+    <div className="posts-list">
+      {posts.map((post) => (
+        <div className="post" key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.content}</p>
 
-      <div></div>
+          <div></div>
 
-      <div>
-        <button onClick={() => addReaction(post.id, 0)}>
-          👍 {post.reactions[0]}
-        </button>
+           <div>
+            <button onClick={() => addReaction(post.id, 0)}>
+              👍 {post.reactions[0]}
+            </button>
 
-        <button onClick={() => addReaction(post.id, 1)}>
-          ❤️ {post.reactions[1]}
-        </button>
+            <button onClick={() => addReaction(post.id, 1)}>
+              ❤️ {post.reactions[1]}
+            </button>
 
-        <button onClick={() => addReaction(post.id, 2)}>
-          🎉 {post.reactions[2]}
-        </button>
+            <button onClick={() => addReaction(post.id, 2)}>
+              🎉 {post.reactions[2]}
+            </button>
 
-        <button onClick={() => addReaction(post.id, 3)}>
-          🚀 {post.reactions[3]}
-        </button>
+            <button onClick={() => addReaction(post.id, 3)}>
+              🚀 {post.reactions[3]}
+            </button>
 
-        <button onClick={() => addReaction(post.id, 4)}>
-          👀 {post.reactions[4]}
-        </button>
-      </div>
+            <button onClick={() => addReaction(post.id, 4)}>
+              👀 {post.reactions[4]}
+            </button>
+            </div>
 
-      <Link className="button" to={`/posts/${post.id}`}>
-        View Post
-      </Link>
+          <Link className="button" to={`/posts/${post.id}`}>
+            View Post
+          </Link>
+         </div>
+       ))}
     </div>
-  ))}
-</div>
+  </div>
+ );
+}
 function UserPosts({ posts }) {
   const { userId } = useParams();
 
