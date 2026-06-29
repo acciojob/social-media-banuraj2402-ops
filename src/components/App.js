@@ -109,8 +109,8 @@ function Home({ posts, setPosts }) {
             <br />
             <br />
 
-          <Link className="button" to={`/posts/${post.id}`}>
-            View Post
+          <Link to={`/posts/${post.id}`}>
+            <button className="button">View Post</button>
           </Link>
           </div>
         ))}
@@ -230,12 +230,12 @@ function SinglePostPage({ posts, setPosts }) {
     <div className="post">
       <h2>Single Post</h2>
 
-      <button className="button">Edit</button>
+      <button className="button">Edit Post</button>
 
       <br />
       <br />
 
-      <form>
+      
         <input
           id="postTitle"
           value={title}
@@ -259,7 +259,7 @@ function SinglePostPage({ posts, setPosts }) {
      <button type="button" onClick={savePost}>
          Save Post
       </button>
-    </form>
+
     </div>
   );
 }
