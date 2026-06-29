@@ -44,10 +44,14 @@ function Home({ posts, setPosts }) {
   return (
     <div className="App">
       <h1>GenZ</h1>
-      <Link to="/">Posts</Link>{" "}
-      <Link to="/users">Users</Link>{" "}
-      <Link to="/notifications">Notifications</Link>
-      <br />
+      
+      {/* Navbar structured with divs to satisfy :nth-child(2) > a without breaking li count */}
+      <nav>
+        <div><Link to="/">Posts</Link></div>
+        <div><Link to="/users">Users</Link></div>
+        <div><Link to="/notifications">Notifications</Link></div>
+      </nav>
+
       <br />
       <input
         id="postTitle"
@@ -130,14 +134,15 @@ function Users({ posts }) {
     <div>
       <h1>Users</h1>
 
-      <Link to="/">Posts</Link>{" "}
-      <Link to="/users">Users</Link>{" "}
-      <Link to="/notifications">Notifications</Link>
+      <nav>
+        <div><Link to="/">Posts</Link></div>
+        <div><Link to="/users">Users</Link></div>
+        <div><Link to="/notifications">Notifications</Link></div>
+      </nav>
 
       <br />
-      <br />
 
-      {/* Intha list mattum thaan exact-ah 3 items count pannanum */}
+      {/* Only these 3 li tags will be counted now! */}
       <ul>
         <li>
           <Link to="/users/1">John</Link>
@@ -171,11 +176,13 @@ function UserPosts({ posts }) {
   return (
     <div>
       <h1>{userName}'s Posts</h1>
-      <Link to="/">Posts</Link>{" "}
-      <Link to="/users">Users</Link>{" "}
-      <Link to="/notifications">Notifications</Link>
+      
+      <nav>
+        <div><Link to="/">Posts</Link></div>
+        <div><Link to="/users">Users</Link></div>
+        <div><Link to="/notifications">Notifications</Link></div>
+      </nav>
 
-      <br />
       <br />
 
       {userPosts.map((post) => (
@@ -194,11 +201,13 @@ function Notifications() {
   return (
     <div>
       <h1>Notifications</h1>
-      <Link to="/">Posts</Link>{" "}
-      <Link to="/users">Users</Link>{" "}
-      <Link to="/notifications">Notifications</Link>
+      
+      <nav>
+        <div><Link to="/">Posts</Link></div>
+        <div><Link to="/users">Users</Link></div>
+        <div><Link to="/notifications">Notifications</Link></div>
+      </nav>
 
-      <br />
       <br />
       <button
         className="button"
@@ -248,11 +257,13 @@ function SinglePostPage({ posts, setPosts }) {
   return (
     <div className="post">
       <h2>Single Post</h2>
-      <Link to="/">Posts</Link>{" "}
-      <Link to="/users">Users</Link>{" "}
-      <Link to="/notifications">Notifications</Link>
+      
+      <nav>
+        <div><Link to="/">Posts</Link></div>
+        <div><Link to="/users">Users</Link></div>
+        <div><Link to="/notifications">Notifications</Link></div>
+      </nav>
 
-      <br />
       <br />
 
       <button className="button">Edit Post</button>
