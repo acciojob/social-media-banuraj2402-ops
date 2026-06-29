@@ -120,14 +120,18 @@ function Home({ posts, setPosts }) {
   </div>
  );
 }
+
 function Users({ posts }) {
   return (
     <div>
       <h1>Users</h1>
-
-      <Link to="/">Posts</Link>{" "}
-      <Link to="/users">Users</Link>{" "}
-      <Link to="/notifications">Notifications</Link>
+      
+      {/* Wrap navigation in ul/li */}
+      <ul>
+        <li><Link to="/">Posts</Link></li>
+        <li><Link to="/users">Users</Link></li>
+        <li><Link to="/notifications">Notifications</Link></li>
+      </ul>
 
       <br />
       <br />
