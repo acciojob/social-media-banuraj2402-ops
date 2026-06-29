@@ -132,18 +132,15 @@ function Users({ posts }) {
       <br />
       <br />
 
-      <ul>
-        <li>
-          <Link to="/users/1">John</Link>
-        </li>
-        <li>
-          <Link to="/users/2">Sarah</Link>
-        </li>
-        <li>
-          <Link to="/users/3">Banu</Link>
-        </li>
-      </ul>
+     <div>
+      <Link to="/users/1">John</Link>
+      <br />
 
+      <Link to="/users/2">Sarah</Link>
+      <br />
+
+      <Link to="/users/3">Banu</Link>
+    </div>
       {posts.length > 0 && (
         <div className="post">
           <h3>{posts[0].title}</h3>
