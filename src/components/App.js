@@ -45,11 +45,13 @@ function Home({ posts, setPosts }) {
     <div className="App">
       <h1>GenZ</h1>
       
-      <div className="navbar">
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
-      </div>
+      <nav className="navbar">
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
+      </nav>
 
       <br />
       <input
@@ -133,26 +135,28 @@ function Users({ posts }) {
     <div>
       <h1>Users</h1>
 
-      <div className="navbar">
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
-      </div>
+      <nav className="navbar">
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
+      </nav>
 
       <br />
 
-      {/* Structured with divs sequentially to handle structural element queries without list interference */}
-      <div className="users-container">
-        <div>
+      {/* Rendu ul elements separated with clear class identity */}
+      <ul className="users-list">
+        <li>
           <Link to="/users/1">John</Link>
-        </div>
-        <div>
+        </li>
+        <li>
           <Link to="/users/2">Sarah</Link>
-        </div>
-        <div>
+        </li>
+        <li>
           <Link to="/users/3">Banu</Link>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   );
 }
@@ -176,11 +180,13 @@ function UserPosts({ posts }) {
     <div>
       <h1>{userName}'s Posts</h1>
       
-      <div className="navbar">
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
-      </div>
+      <nav className="navbar">
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
+      </nav>
 
       <br />
 
@@ -201,11 +207,13 @@ function Notifications() {
     <div>
       <h1>Notifications</h1>
       
-      <div className="navbar">
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
-      </div>
+      <nav className="navbar">
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
+      </nav>
 
       <br />
       <button
@@ -257,11 +265,13 @@ function SinglePostPage({ posts, setPosts }) {
     <div className="post">
       <h2>Single Post</h2>
       
-      <div className="navbar">
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
-      </div>
+      <nav className="navbar">
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
+      </nav>
 
       <br />
 
