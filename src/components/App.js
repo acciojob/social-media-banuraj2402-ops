@@ -136,21 +136,27 @@ function Home({ posts, setPosts }) {
   );
 }
 
-function Users({ posts }) {
+function Users() {
   return (
     <div>
       <h1>Users</h1>
 
       <div className="post">
-        <Link to="/users/1">John</Link>
+        <h3>
+          <Link to="/users/1">John</Link>
+        </h3>
       </div>
 
       <div className="post">
-        <Link to="/users/2">Sarah</Link>
+        <h3>
+          <Link to="/users/2">Sarah</Link>
+        </h3>
       </div>
 
       <div className="post">
-        <Link to="/users/3">Banu</Link>
+        <h3>
+          <Link to="/users/3">Banu</Link>
+        </h3>
       </div>
     </div>
   );
