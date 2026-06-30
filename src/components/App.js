@@ -145,17 +145,11 @@ function Users({ posts }) {
 
       <br />
 
-      {/* Rendu ul elements separated with clear class identity */}
-      <ul className="users-list">
-        <li>
-          <Link to="/users/1">John</Link>
-        </li>
-        <li>
-          <Link to="/users/2">Sarah</Link>
-        </li>
-        <li>
-          <Link to="/users/3">Banu</Link>
-        </li>
+    
+      <ul>
+        <li>John</li>
+        <li>Sarah</li>
+        <li>Banu</li>
       </ul>
     </div>
   );
