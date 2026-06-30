@@ -319,6 +319,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <NavigationBar />
       <Switch>
         <Route exact path="/">
           <Home posts={posts} setPosts={setPosts} />
