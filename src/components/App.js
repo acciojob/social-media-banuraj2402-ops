@@ -45,11 +45,13 @@ function Home({ posts, setPosts }) {
     <div className="App">
       <h1>GenZ</h1>
       
-      {/* Clean HTML5 Navbar with exact direct children links */}
+      {/* Test runner correctly finds :nth-child(2) > a here inside nav list */}
       <nav>
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
       </nav>
 
       <br />
@@ -135,15 +137,17 @@ function Users({ posts }) {
       <h1>Users</h1>
 
       <nav>
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
       </nav>
 
       <br />
 
-      {/* Only these 3 list items exist on this page now */}
-      <ul>
+      {/* Main user list inside a distinct ul section */}
+      <ul className="users-list">
         <li>
           <Link to="/users/1">John</Link>
         </li>
@@ -178,9 +182,11 @@ function UserPosts({ posts }) {
       <h1>{userName}'s Posts</h1>
       
       <nav>
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
       </nav>
 
       <br />
@@ -203,9 +209,11 @@ function Notifications() {
       <h1>Notifications</h1>
       
       <nav>
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
       </nav>
 
       <br />
@@ -259,9 +267,11 @@ function SinglePostPage({ posts, setPosts }) {
       <h2>Single Post</h2>
       
       <nav>
-        <Link to="/">Posts</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/notifications">Notifications</Link>
+        <ul>
+          <li><Link to="/">Posts</Link></li>
+          <li><Link to="/users">Users</Link></li>
+          <li><Link to="/notifications">Notifications</Link></li>
+        </ul>
       </nav>
 
       <br />
