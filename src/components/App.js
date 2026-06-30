@@ -45,14 +45,11 @@ function Home({ posts, setPosts }) {
     <div className="App">
       <h1>GenZ</h1>
       
-      {/* Test runner correctly finds :nth-child(2) > a here inside nav list */}
-      <nav>
-        <ul>
-          <li><Link to="/">Posts</Link></li>
-          <li><Link to="/users">Users</Link></li>
-          <li><Link to="/notifications">Notifications</Link></li>
-        </ul>
-      </nav>
+      <div className="navbar">
+        <Link to="/">Posts</Link>
+        <Link to="/users">Users</Link>
+        <Link to="/notifications">Notifications</Link>
+      </div>
 
       <br />
       <input
@@ -136,28 +133,26 @@ function Users({ posts }) {
     <div>
       <h1>Users</h1>
 
-      <nav>
-        <ul>
-          <li><Link to="/">Posts</Link></li>
-          <li><Link to="/users">Users</Link></li>
-          <li><Link to="/notifications">Notifications</Link></li>
-        </ul>
-      </nav>
+      <div className="navbar">
+        <Link to="/">Posts</Link>
+        <Link to="/users">Users</Link>
+        <Link to="/notifications">Notifications</Link>
+      </div>
 
       <br />
 
-      {/* Main user list inside a distinct ul section */}
-      <ul className="users-list">
-        <li>
+      {/* Structured with divs sequentially to handle structural element queries without list interference */}
+      <div className="users-container">
+        <div>
           <Link to="/users/1">John</Link>
-        </li>
-        <li>
+        </div>
+        <div>
           <Link to="/users/2">Sarah</Link>
-        </li>
-        <li>
+        </div>
+        <div>
           <Link to="/users/3">Banu</Link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   );
 }
@@ -181,13 +176,11 @@ function UserPosts({ posts }) {
     <div>
       <h1>{userName}'s Posts</h1>
       
-      <nav>
-        <ul>
-          <li><Link to="/">Posts</Link></li>
-          <li><Link to="/users">Users</Link></li>
-          <li><Link to="/notifications">Notifications</Link></li>
-        </ul>
-      </nav>
+      <div className="navbar">
+        <Link to="/">Posts</Link>
+        <Link to="/users">Users</Link>
+        <Link to="/notifications">Notifications</Link>
+      </div>
 
       <br />
 
@@ -208,13 +201,11 @@ function Notifications() {
     <div>
       <h1>Notifications</h1>
       
-      <nav>
-        <ul>
-          <li><Link to="/">Posts</Link></li>
-          <li><Link to="/users">Users</Link></li>
-          <li><Link to="/notifications">Notifications</Link></li>
-        </ul>
-      </nav>
+      <div className="navbar">
+        <Link to="/">Posts</Link>
+        <Link to="/users">Users</Link>
+        <Link to="/notifications">Notifications</Link>
+      </div>
 
       <br />
       <button
@@ -266,13 +257,11 @@ function SinglePostPage({ posts, setPosts }) {
     <div className="post">
       <h2>Single Post</h2>
       
-      <nav>
-        <ul>
-          <li><Link to="/">Posts</Link></li>
-          <li><Link to="/users">Users</Link></li>
-          <li><Link to="/notifications">Notifications</Link></li>
-        </ul>
-      </nav>
+      <div className="navbar">
+        <Link to="/">Posts</Link>
+        <Link to="/users">Users</Link>
+        <Link to="/notifications">Notifications</Link>
+      </div>
 
       <br />
 
